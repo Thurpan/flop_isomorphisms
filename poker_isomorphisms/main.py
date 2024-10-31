@@ -1,6 +1,6 @@
 from itertools import permutations
 
-def get_isomorphisms(flop, 
+def flop_isomorphisms(flop, 
                      with_spaces=None, 
                      suits_order=['s', 'h', 'd', 'c'], 
                      rank_order=['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2']):
@@ -87,7 +87,7 @@ def get_isomorphisms(flop,
             flop_list.append(f'{card_list[0]}{spaces}{card_list[1]}{spaces}{card_list[2]}')
     return list(dict.fromkeys(flop_list))
 
-def normalise_flop(flop, 
+def flop_normalise(flop, 
                    with_spaces=None, 
                    suits_order=['s', 'h', 'd', 'c'], 
                    rank_order=['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2']):
