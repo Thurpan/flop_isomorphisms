@@ -5,7 +5,7 @@ with open('README.md', 'r') as f:
     description = f.read()
 
 setup(
-    name='flop_isomorphisms',
+    name='poker_isomorphisms',
     version='0.1',
     packages=find_packages(),
     install_requires=[],

@@ -1,1 +1,1 @@
-from .main import get_isomorphisms, normalise_flop
+from .main import flop_isomorphisms, flop_normalise
