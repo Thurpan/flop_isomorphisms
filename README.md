@@ -2,10 +2,12 @@
  
 poker_isomorphisms is a Python library for dealing with flop isomorphisms in relation to poker.
 Isomorphic in poker refers to strategically equivalent cards. Isomorphic hands can apply to hole cards or community cards (aka a flop). There are 22100 possible flops out of which 1755 are strategically different.
+
 Example 1) AsKs is strategically identical to AcKc on a Th9h7h flop; therefore, these two hands are isomorphic.
 Example 2) Kh9s3h is strategically identical to Kd9c3d; therefore, these two flops are isomorphic.
 
 [GTO Wizard](https://gtowizard.com/glossary/isomorphic/)
+
 [PioSOLVER](https://piosolver.com/blog/2015-11-05-flop-subsets/)
 
 ## Installation
