@@ -10,6 +10,14 @@ Example 2) Kh9s3h is strategically identical to Kd9c3d; therefore, these two flo
 
 [PioSOLVER](https://piosolver.com/blog/2015-11-05-flop-subsets/)
 
+## Links
+
+Documentation:      
+
+Code:               https://github.com/Thurpan/poker_isomorphisms
+
+Pip:                https://pypi.org/project/poker_isomorphisms/
+
 ## Installation
 NOT SETUP YET. THIS NEEDS TO BE DONE
 
@@ -34,8 +42,6 @@ poker_isomorphisms.flop_normalise('7cQc3s')
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 
