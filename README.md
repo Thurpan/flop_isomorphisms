@@ -12,11 +12,11 @@ Example 2) Kh9s3h is strategically identical to Kd9c3d; therefore, these two flo
 
 ## Links
 
-Documentation:      
+Documentation: 
 
-Code:               https://github.com/Thurpan/poker_isomorphisms
+Code: https://github.com/Thurpan/poker_isomorphisms
 
-Pip:                https://pypi.org/project/poker_isomorphisms/
+Pip: https://pypi.org/project/poker_isomorphisms/
 
 ## Installation
 NOT SETUP YET. THIS NEEDS TO BE DONE
