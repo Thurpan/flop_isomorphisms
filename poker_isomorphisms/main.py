@@ -1,11 +1,11 @@
 from itertools import permutations
 
-def get_isomorphisms(flop):
-    
-    suits_order=['s', 'h', 'd', 'c']
-    rank_order=['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2']
+def get_isomorphisms(flop, 
+                     with_spaces=None, 
+                     suits_order=['s', 'h', 'd', 'c'], 
+                     rank_order=['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2']):
 
-    cards = [r + s for r in rank_order for s in suits_order]
+    cards = [r+s for r in rank_order for s in suits_order]
     suits_s = ['h', 'd', 'c']
     suits_h = ['s', 'd', 'c']
     suits_d = ['s', 'h', 'c']
@@ -23,9 +23,19 @@ def get_isomorphisms(flop):
     suits_ch = ['s', 'd']
     suits_cd = ['s', 'h']
 
+    if with_spaces == True:
+        spaces = ' '
+    elif with_spaces == False:
+        spaces = ''
+    elif with_spaces == None:
+        if flop.count(' ') > 1:
+            spaces = ' '
+        else:
+            spaces = ''
+
     flop = flop.replace(' ','')
     sorted_cards = [flop[0:2], flop[2:4], flop[4:6]]
-    sorted_cards.sort(key = lambda x:cards.index(x))
+    sorted_cards.sort(key=lambda x:cards.index(x))
     r1, r2, r3 = sorted_cards[0][0], sorted_cards[1][0], sorted_cards[2][0]
     s1, s2, s3 = sorted_cards[0][1], sorted_cards[1][1], sorted_cards[2][1]
 
@@ -74,23 +84,34 @@ def get_isomorphisms(flop):
     flop_list = []
     for flop in flops:
         for card_list in list(permutations([flop[0:2], flop[2:4], flop[4:6]])):
-            flop_list.append(card_list[0] + card_list[1] + card_list[2])
+            flop_list.append(f'{card_list[0]}{spaces}{card_list[1]}{spaces}{card_list[2]}')
     return list(dict.fromkeys(flop_list))
 
 def normalise_flop(flop, 
+                   with_spaces=None, 
                    suits_order=['s', 'h', 'd', 'c'], 
                    rank_order=['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2']):
 
-    cards = [r + s for r in rank_order for s in suits_order]
+    if with_spaces == True:
+        spaces = ' '
+    elif with_spaces == False:
+        spaces = ''
+    elif with_spaces == None:
+        if flop.count(' ') > 1:
+            spaces = ' '
+        else:
+            spaces = ''
+
+    cards = [r+s for r in rank_order for s in suits_order]
     flop = flop.replace(' ','')
     sorted_cards = [flop[0:2], flop[2:4], flop[4:6]]
-    sorted_cards.sort(key = lambda x:cards.index(x))
+    sorted_cards.sort(key=lambda x:cards.index(x))
     r1, r2, r3 = sorted_cards[0][0], sorted_cards[1][0], sorted_cards[2][0]
     s1, s2, s3 = sorted_cards[0][1], sorted_cards[1][1], sorted_cards[2][1]
 
     if s1 == s2 == s3: #mono
         suit = suits_order[0]
-        return f'{r1}{suit}{r2}{suit}{r3}{suit}'
+        return f'{r1}{suit}{spaces}{r2}{suit}{spaces}{r3}{suit}'
     elif s1 == s2 or s1 == s3 or s2 == s3: #suited
         if r1 == r2 and s1 != s3:
             temp = s1
@@ -103,13 +124,13 @@ def normalise_flop(flop,
         suit_0 = suits_order[0]
         suit_1 = suits_order[1]
         if s1 == s2:
-            return f'{r1}{suit_0}{r2}{suit_0}{r3}{suit_1}'
+            return f'{r1}{suit_0}{spaces}{r2}{suit_0}{spaces}{r3}{suit_1}'
         elif s1 == s3:
-            return f'{r1}{suit_0}{r2}{suit_1}{r3}{suit_0}'
+            return f'{r1}{suit_0}{spaces}{r2}{suit_1}{spaces}{r3}{suit_0}'
         elif s2 == s3:
-            return f'{r1}{suit_0}{r2}{suit_1}{r3}{suit_1}'
+            return f'{r1}{suit_0}{spaces}{r2}{suit_1}{spaces}{r3}{suit_1}'
     else: #rainbow
         suit_0 = suits_order[0]
         suit_1 = suits_order[1]
         suit_2 = suits_order[2]
-        return f'{r1}{suit_0}{r2}{suit_1}{r3}{suit_2}'
+        return f'{r1}{suit_0}{spaces}{r2}{suit_1}{spaces}{r3}{suit_2}'
