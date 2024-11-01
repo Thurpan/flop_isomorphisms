@@ -19,9 +19,8 @@ Code: https://github.com/Thurpan/poker_isomorphisms
 Pip: https://pypi.org/project/poker_isomorphisms/
 
 ## Installation
-NOT SETUP YET. THIS NEEDS TO BE DONE
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install poker_isomorphisms.
 
 ```bash
 pip install poker_isomorphisms
