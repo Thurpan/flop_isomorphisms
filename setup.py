@@ -6,7 +6,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='poker_isomorphisms',
-    version='0.1',
+    version='0.2',
     packages=find_packages(),
     install_requires=[],
     long_description=description,
